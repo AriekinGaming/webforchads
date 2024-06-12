@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.5">
+<title>Pikaman Question</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+  #imageDisplay { max-width: 80%; height: auto; margin: 20px; }
+  .hidden { display: none; }
+  button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h2>Are you Pikaman?</h2>
+
+<!-- The images will be displayed here -->
+<img id="imageI" src="imageI.jpeg" alt="Image I" style="display:none;">
+<img id="imageF" src="imagef.jpeg" alt="Image F" class="hidden">
+
+<!-- Buttons for user interaction -->
+<button onclick="handleAnswer('yes')">Yes</button>
+<button onclick="handleAnswer('no')">No</button>
+
+<!-- Placeholder for the response -->
+<p id="response"></p>
+
+<script>
+function handleAnswer(answer) {
+  var response = document.getElementById('response');
+  var imageI = document.getElementById('imageI');
+  var imageF = document.getElementById('imageF');
+
+  if(answer === 'yes') {
+    response.textContent = 'You are gay!';
+    imageI.style.display = 'none';
+    imageF.style.display = 'block';
+  } else {
+    response.textContent = 'You are not gay.';
+    imageI.style.display = 'block';
+    imageF.style.display = 'none';
+  }
+}
+</script>
+
+</body>
+</html>
